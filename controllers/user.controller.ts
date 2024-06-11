@@ -81,7 +81,7 @@ export const editUser = async (req: Request, res: Response, next: NextFunction) 
             throw new Error('User does not have the required permissions');
         }
         const userIDNum = convertToNum(userID, 'Invalid user ID');
-        await userService.editUser(userIDNum, firstName, lastName, gender, birthday, phone, email, isActive, "auth0ID");
+        await userService.editUser(userIDNum, firstName, lastName, gender, birthday, phone, email, isActive, auth0ID);
         res.sendStatus(200);
     } catch (err) {
         return next(err);

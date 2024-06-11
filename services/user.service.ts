@@ -134,7 +134,6 @@ export const editUser = async (
 	auth0ID: string
 ) => {
 	console.log(`[Server] Editing user profile for user ${userID}`);
-
 	const currUser = await User.findOne({ where: { auth0ID } });
 	if (!currUser) throw new HttpException(401, 'Invalid token');
 
