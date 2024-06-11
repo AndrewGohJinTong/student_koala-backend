@@ -54,6 +54,8 @@ import {
 } from './controllers/user.controller';
 import { initDb } from './helpers/database';
 import { checkAuthorised, checkDeviceJWT, checkJWT, errorHandler } from './helpers/middleware';
+import { addObsvType, deleteObsvType, listObsvTypes } from './controllers/obsvDesc.controller';
+
 
 const app = express();
 const router = express.Router();
@@ -272,6 +274,10 @@ app.delete('/user/:userID', deactivateUser);
 
 app.get('/threshold/:userID', getPatientThresholds);
 app.put('/threshold', editPatientThreshold);
+
+app.post('/v1/observationTypes', addObsvType);
+app.get('/v1/observationTypes', listObsvTypes);
+app.delete('/v1/observationTypes/:obsvName', deleteObsvType);
 
 app.use(errorHandler);
 
