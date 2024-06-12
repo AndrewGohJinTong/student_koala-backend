@@ -4,7 +4,6 @@ import * as obsvDescService from '../services/obsvDesc.service';
 
 export const addObsvType = async (req: Request, res: Response, next: NextFunction) => {
   const { obsvName, description, unit, dataEnumId } = req.body;
-  console.log(req.body);
   try {
     // TODO: Check perms
     await obsvDescService.addObsvType(
