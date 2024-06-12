@@ -55,7 +55,7 @@ import {
 import { initDb } from './helpers/database';
 import { checkAuthorised, checkDeviceJWT, checkJWT, errorHandler } from './helpers/middleware';
 import { addObsvType, deleteObsvType, listObsvTypes } from './controllers/obsvDesc.controller';
-import { addDataEnum } from 'controllers/dataEnum.controller';
+import { addDataEnum, listDataEnums } from './controllers/dataEnum.controller';
 
 
 const app = express();
@@ -281,6 +281,8 @@ app.get('/v1/observationTypes', listObsvTypes);
 app.delete('/v1/observationTypes/:obsvName', deleteObsvType);
 
 app.post('/v1/dataEnum', addDataEnum);
+app.get('/v1/dataEnum', listDataEnums);
+
 
 app.use(errorHandler);
 

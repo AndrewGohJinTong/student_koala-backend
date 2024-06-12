@@ -12,3 +12,15 @@ export const addDataEnum = async (req: Request, res: Response, next: NextFunctio
     next(err);
   }
 };
+
+export const listDataEnums = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    // TODO: Check perms
+    const allDataEnums = await dataEnumService.listDataEnums();
+    res.send({
+      body: allDataEnums
+    })
+  } catch(err) {
+    next(err);
+  }
+};
