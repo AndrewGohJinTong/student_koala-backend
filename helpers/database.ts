@@ -12,6 +12,8 @@ import User from '../models/User';
 import UserCareGroupRelation from '../models/UserCareGroupRelation';
 import { Dialect } from 'sequelize';
 import Threshold from '../models/Threshold';
+import ObsvDescript from '../models/ObsvDescript';
+import DataEnum from '../models/DataEnum';
 
 dotenv.config();
 
@@ -28,7 +30,7 @@ export const sequelize = new Sequelize({
   //     trustServerCertificate: false,
   //   },
   // },
-  models: [User, Patient, Clinician, CareGroup, UserCareGroupRelation, DeviceData, Alert, Device, Note, Setting, Threshold],
+  models: [User, Patient, Clinician, CareGroup, UserCareGroupRelation, DeviceData, Alert, Device, Note, Setting, Threshold, ObsvDescript, DataEnum],
   pool: {
     max: 10,
     min: 0,
